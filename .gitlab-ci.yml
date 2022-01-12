@@ -15,6 +15,7 @@ cache:
 pages:
   script:
     - npm install
+    - rm -rf pages/dynamic
     - npm run build
     - npm run export
   artifacts:
