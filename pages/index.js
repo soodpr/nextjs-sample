@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to NextJS Sample
+          KloudWranglers Blog
         </h1>
         <nav>
           <Link href="/static">
