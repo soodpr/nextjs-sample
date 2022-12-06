@@ -35,10 +35,11 @@ export default function Index({ posts }) {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
+  console.log("Generating/Regenerating the posts")
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const posts = await res.json()
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
-  return { props: { posts }, revalidate: 60 }
+  return { props: { posts }, revalidate: 10 }
 }
