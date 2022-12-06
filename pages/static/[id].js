@@ -43,9 +43,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
+  console.log(`Generating/Regenerating the post with id-${params.id}`)
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
   const post = await res.json()
 
   // Pass post data to the page via props
-  return { props: { post } }
+  return { props: { post }, revalidate: 10 }
 }
